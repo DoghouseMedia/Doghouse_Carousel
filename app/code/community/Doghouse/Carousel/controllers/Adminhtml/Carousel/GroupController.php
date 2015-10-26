@@ -166,7 +166,7 @@ class Doghouse_Carousel_Adminhtml_Carousel_GroupController extends Mage_Adminhtm
      */
     protected function _isAllowed()
     {
-        return Mage::getSingleton('admin/session')->isAllowed('dhcarousel');
+        return Mage::getSingleton('admin/session')->isAllowed('cms/dhcarousel/dhcarousel_groups');
     }
 
 }

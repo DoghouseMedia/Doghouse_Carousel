@@ -33,10 +33,14 @@
                                 <title>Carousel</title>
                                 <sort_order>1000</sort_order>
                                 <children>
-                                    <article translate="title" module="dhcarousel">
+                                    <dhcarousel_items>
                                         <title>Manage Items</title>
                                         <sort_order>0</sort_order>
-                                    </article>
+                                    </dhcarousel_items>
+                                    <dhcarousel_groups>
+                                        <title>Manage Groups</title>
+                                        <sort_order>0</sort_order>
+                                    </dhcarousel_groups>
                                 </children>
                             </dhcarousel>
                         </children>
