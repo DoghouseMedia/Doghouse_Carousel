@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Doghouse_Carousel>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Doghouse_Carousel>
+    </modules>
+</config>

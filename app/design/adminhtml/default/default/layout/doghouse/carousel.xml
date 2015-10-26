@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <adminhtml_carousel>
+        <reference name="head">
+            <action method="setCanLoadExtJs"><flag>1</flag></action>
+            <action method="addJs"><script>mage/adminhtml/wysiwyg/widget.js</script></action>
+            <action method="addItem"><type>js_css</type><name>prototype/windows/themes/default.css</name></action>
+            <action method="addItem"><type>js_css</type><name>prototype/windows/themes/doghouse/default.css</name></action>
+        </reference>
+    </adminhtml_carousel>
+
+    <adminhtml_carousel_new>
+        <update handle="adminhtml_carousel" />
+    </adminhtml_carousel_new>
+
+    <adminhtml_carousel_edit>
+        <update handle="adminhtml_carousel" />
+    </adminhtml_carousel_edit>
+</layout>

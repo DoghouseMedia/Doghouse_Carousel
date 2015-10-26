@@ -1,0 +1,5 @@
+app/code/community/Doghouse/Carousel/ app/code/community/Doghouse/Carousel/
+app/design/frontend/base/default/template/doghouse/carousel/carousel.phtml app/design/frontend/base/default/template/doghouse/carousel/carousel.phtml
+app/etc/modules/Doghouse_Carousel.xml app/etc/modules/Doghouse_Carousel.xml
+app/design/adminhtml/default/default/layout/doghouse/carousel.xml app/design/adminhtml/default/default/layout/doghouse/carousel.xml
+js/prototype/windows/themes/doghouse/default.css js/prototype/windows/themes/doghouse/default.css

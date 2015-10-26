@@ -1,0 +1,8 @@
+<widgets>
+    <dhcarousel_carousel type="dhcarousel/carousel">
+        <name>Doghouse Carousel</name>
+        <description type="desc">
+            This widget inserts a carousel slider.
+        </description>
+    </dhcarousel_carousel>
+</widgets>

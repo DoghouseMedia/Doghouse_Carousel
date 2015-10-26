@@ -1,0 +1,43 @@
+<config>
+    <menu>
+        <cms>
+            <children>
+                <dhcarousel_items translate="title" module="dhcarousel">
+                    <title>Carousel</title>
+                    <sort_order>150</sort_order>
+                    <action>adminhtml/carousel</action>
+                </dhcarousel_items>
+                <dhcarousel_groups translate="title" module="dhcarousel">
+                    <title>Carousel Groups</title>
+                    <sort_order>151</sort_order>
+                    <action>adminhtml/carousel_group</action>
+                </dhcarousel_groups>
+            </children>
+        </cms>
+    </menu>
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <cms>
+                        <children>
+                            <dhcarousel translate="title" module="dhcarousel">
+                                <title>Carousel</title>
+                                <sort_order>1000</sort_order>
+                                <children>
+                                    <article translate="title" module="dhcarousel">
+                                        <title>Manage Items</title>
+                                        <sort_order>0</sort_order>
+                                    </article>
+                                </children>
+                            </dhcarousel>
+                        </children>
+                    </cms>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

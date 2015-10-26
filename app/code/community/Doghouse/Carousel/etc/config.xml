@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Doghouse_Carousel>
+            <version>0.1.6</version>
+        </Doghouse_Carousel>
+    </modules>
+    <global>
+        <blocks>
+            <dhcarousel>
+                <class>Doghouse_Carousel_Block</class>
+            </dhcarousel>
+        </blocks>
+        <models>
+            <dhcarousel>
+                <class>Doghouse_Carousel_Model</class>
+                <resourceModel>dhcarousel_resource</resourceModel>
+            </dhcarousel>
+            <dhcarousel_resource>
+                <class>Doghouse_Carousel_Model_Resource</class>
+                <entities>
+                    <item>
+                        <table>dhcarousel_item</table>
+                    </item>
+                    <group>
+                        <table>dhcarousel_group</table>
+                    </group>
+                </entities>
+            </dhcarousel_resource>
+        </models>
+        <helpers>
+            <dhcarousel>
+                <class>Doghouse_Carousel_Helper</class>
+            </dhcarousel>
+        </helpers>
+        <resources>
+            <dhcarousel_setup>
+                <setup>
+                    <module>Doghouse_Carousel</module>
+                </setup>
+            </dhcarousel_setup>
+        </resources>
+        <cache>
+            <types>
+                <block_dhm_carousel translate="label,description" module="dhcarousel">
+                    <label>Carousel Cache</label>
+                    <description>Clear all carousels display cache</description>
+                    <tags>BLOCK_DHM_CAROUSEL</tags>
+                </block_dhm_carousel>
+            </types>
+        </cache>
+    </global>
+    <adminhtml>
+        <layout>
+            <updates>
+                <dhcarousel>
+                    <file>doghouse/carousel.xml</file>
+                </dhcarousel>
+            </updates>
+        </layout>
+    </adminhtml>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <dhcarousel after="Mage_Adminhtml">Doghouse_Carousel_Adminhtml</dhcarousel>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <crontab>
+        <jobs>
+            <carousel_cache_clear>
+                <schedule>
+                    <cron_expr>0 0 * * *</cron_expr>
+                </schedule>
+                <run>
+                    <model>dhcarousel/cron::clearCache</model>
+                </run>
+            </carousel_cache_clear>
+        </jobs>
+    </crontab>
+</config>

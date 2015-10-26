@@ -1,0 +1,16 @@
+{
+    "name": "doghouse/carousel",
+    "type": "magento-module",
+    "homepage": "http://stash.dhmedia.com.au/projects/DMMODULES/repos/carousel-magento-2014",
+    "license":"OSL-3.0",
+    "description":"Illest Magento carousel alive that doesn't make any design decisions for you.",
+    "authors":[
+        {
+            "name":"Erfan Imani",
+            "email":"erfan@dhmedia.com.au"
+        }
+    ],
+    "require": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}

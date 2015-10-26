@@ -1,0 +1,22 @@
+<?php
+
+$_items = $this->getCarouselItems();
+$_helper = Mage::helper('dhcarousel');
+
+?>
+
+<?php if(count($_items)) : ?>
+
+	<ul class="dhcarousel">
+
+	<?php foreach($_items as $_item) : ?>
+
+		<li class="dhcarousel__item">
+			<a href="<?php echo $_helper->getUrl($_item) ?>" title="<?php echo $_item->getLabel() ?>"><img alt="<?php echo $_item->getName() ?>" title="<?php echo $_item->getLabel() ?>" src="<?php echo $_helper->getImage($_item) ?>" /></a>
+		</li>
+
+	<?php endforeach; ?>
+
+	</ul>
+
+<?php endif; ?>

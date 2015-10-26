@@ -1,0 +1,65 @@
+
+### Magento directories
+
+/media/
+/var/
+/downloader/
+
+
+### Magento misc files
+
+/.htaccess.sample
+/index.php.sample
+/install.php
+/LICENSE.html
+/LICENSE.txt
+/LICENSE_AFL.txt
+/php.ini.sample
+/RELEASE_NOTES.txt
+/pkginfo/
+/maintenance.flag
+
+### Configuration
+
+/app/etc/local.xml
+
+
+### Snapshot database dumps
+
+/snapshot/
+
+
+### Any Sass and compiled stylesheets except for default and base
+
+.sass-cache/
+/skin/frontend/*/*/css/
+!/skin/frontend/base/default/css/
+!/skin/frontend/default/default/css/
+
+
+### IDE's
+
+*.sublime-project
+*.sublime-workspace
+/.idea
+/.buildpath/
+/.project/
+/.settings/
+/nbproject/
+/module_sources/
+/database_dumps/
+/sass-cache/
+
+### TESTING
+
+/firegento.php
+
+
+### MODMAN
+
+/.modman/
+
+
+### COMPOSER
+
+/vendor/
