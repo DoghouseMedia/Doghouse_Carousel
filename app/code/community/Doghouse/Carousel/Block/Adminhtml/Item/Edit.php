@@ -1,8 +1,20 @@
 <?php
-
+/**
+ * Doghouse_Carousel_Block_Adminhtml_Item_Edit
+ *
+ * @category  Doghouse
+ * @package   Doghouse_Carousel
+ * @author    Doghouse <support@dhmedia.com.au>
+ * @copyright 2015 Doghouse Media (http://doghouse.agency)
+ * @license   https://github.com/DoghouseMedia/Doghouse_Carousel/blob/master/LICENSE  The MIT License (MIT)
+ * @link      https://github.com/DoghouseMedia/Doghouse_Carousel
+ */
 class Doghouse_Carousel_Block_Adminhtml_Item_Edit extends Mage_Adminhtml_Block_Widget_Form_Container
 {
 
+    /**
+     * Construct adminhtml carousel item edit form.
+     */
 	public function __construct()
 	{
 		parent::__construct();
@@ -26,6 +38,11 @@ class Doghouse_Carousel_Block_Adminhtml_Item_Edit extends Mage_Adminhtml_Block_W
 		";
 	}
 
+    /**
+     * Get header text.
+     *
+     * @return string
+     */
 	public function getHeaderText()
 	{
 		if( Mage::registry("carousel_item_data") && Mage::registry("carousel_item_data")->getId() ){

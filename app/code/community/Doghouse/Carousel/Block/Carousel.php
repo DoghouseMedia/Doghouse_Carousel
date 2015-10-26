@@ -1,16 +1,27 @@
 <?php
-
+/**
+ * Doghouse_Carousel_Block_Carousel
+ *
+ * @category  Doghouse
+ * @package   Doghouse_Carousel
+ * @author    Doghouse <support@dhmedia.com.au>
+ * @copyright 2015 Doghouse Media (http://doghouse.agency)
+ * @license   https://github.com/DoghouseMedia/Doghouse_Carousel/blob/master/LICENSE  The MIT License (MIT)
+ * @link      https://github.com/DoghouseMedia/Doghouse_Carousel
+ */
 class Doghouse_Carousel_Block_Carousel
     extends Mage_Catalog_Block_Product_Abstract
     implements Mage_Widget_Block_Interface
 {
 
     /**
-     * Cache group Tag
+     * Cache group Tag.
      */
     const CACHE_GROUP = 'block_dhm_carousel';
 
     /**
+     * Prepare carousel.
+     *
      * Placeholder function to add js/css to the top of the page.
      * Only works if it's an instance widget or inserted into the layout the normal way.
      * If it's a widget, you add {{widget type="dhcarousel/carousel"}} to a CMS page.
@@ -26,6 +37,9 @@ class Doghouse_Carousel_Block_Carousel
         return parent::_prepareLayout();
     }
 
+    /**
+     * Construct the carousel block.
+     */
     protected function _construct()
     {
 
@@ -37,6 +51,16 @@ class Doghouse_Carousel_Block_Carousel
         return parent::_construct();
     }
 
+    /**
+     * Get carousel items.
+     *
+     * @param null $identifier
+     * @param bool $withProducts
+     * @param bool $withInactive
+     * @param bool $withSchedule
+     * @param bool $withLimit
+     * @return mixed
+     */
     public function getCarouselItems(
         $identifier = null, $withProducts = false, $withInactive = false, $withSchedule = false, $withLimit = false
     ) {
@@ -93,6 +117,11 @@ class Doghouse_Carousel_Block_Carousel
             return $collection;
     }
 
+    /**
+     * Get carousel Group identifier.
+     *
+     * @return string
+     */
     public function getGroupIdentifier()
     {
         if (parent::getGroupIdentifier()) {
@@ -102,6 +131,11 @@ class Doghouse_Carousel_Block_Carousel
         return 'default';
     }
 
+    /**
+     * Adds products to carousel item collection.
+     *
+     * @param $collection
+     */
     public function addProductsToCollection($collection)
     {
         $productIds = array_map(
@@ -128,7 +162,7 @@ class Doghouse_Carousel_Block_Carousel
      * Get cache key informative items
      * Concat the group name to the cache key.
      *
-     * Thsi will allow for clearing of specific cached carousels
+     * This will allow for clearing of specific cached carousels
      *
      * @return array
      */

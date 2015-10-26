@@ -1,15 +1,31 @@
 <?php
-
+/**
+ * Doghouse_Carousel_Adminhtml_CarouselController
+ *
+ * @category  Doghouse
+ * @package   Doghouse_Carousel
+ * @author    Doghouse <support@dhmedia.com.au>
+ * @copyright 2015 Doghouse Media (http://doghouse.agency)
+ * @license   https://github.com/DoghouseMedia/Doghouse_Carousel/blob/master/LICENSE  The MIT License (MIT)
+ * @link      https://github.com/DoghouseMedia/Doghouse_Carousel
+ */
 class Doghouse_Carousel_Adminhtml_Carousel_GroupController extends Mage_Adminhtml_Controller_Action
 {
 
+    /**
+     * Init Action.
+     *
+     * @return $this
+     */
     protected function _initAction()
     {
         $this->loadLayout()->_setActiveMenu("cms/dhcarousel_groups");
-
         return $this;
     }
 
+    /**
+     * Main action for carousel group.
+     */
     public function indexAction()
     {
         $this->_title($this->__("Manage Carousel Groups"));
@@ -19,6 +35,9 @@ class Doghouse_Carousel_Adminhtml_Carousel_GroupController extends Mage_Adminhtm
         $this->renderLayout();
     }
 
+    /**
+     * Creates a new carousel group.
+     */
     public function newAction()
     {
         $this->_title($this->__("New Carousel Group"));
@@ -30,6 +49,9 @@ class Doghouse_Carousel_Adminhtml_Carousel_GroupController extends Mage_Adminhtm
         $this->renderLayout();
     }
 
+    /**
+     * Edit an existing carousel group.
+     */
     public function editAction()
     {
         $this->_title($this->__("Edit Carousel Group"));
@@ -50,6 +72,9 @@ class Doghouse_Carousel_Adminhtml_Carousel_GroupController extends Mage_Adminhtm
         }
     }
 
+    /**
+     * Save carousel group items.
+     */
     public function saveAction()
     {
         $post_data = $this->getRequest()->getPost();
@@ -87,6 +112,9 @@ class Doghouse_Carousel_Adminhtml_Carousel_GroupController extends Mage_Adminhtm
         $this->_redirect("*/*/");
     }
 
+    /**
+     * Delete carousel group items.
+     */
     public function deleteAction()
     {
         if( $this->getRequest()->getParam("id") > 0 ) {
@@ -104,6 +132,9 @@ class Doghouse_Carousel_Adminhtml_Carousel_GroupController extends Mage_Adminhtm
         $this->_redirect("*/*/");
     }
 
+    /**
+     * Mass remove carousel group items.
+     */
     public function massRemoveAction()
     {
         try {
@@ -129,7 +160,7 @@ class Doghouse_Carousel_Adminhtml_Carousel_GroupController extends Mage_Adminhtm
     }
 
     /**
-     * Check acl access for carousel
+     * Check acl access for carousel group.
      *
      * @return mixed
      */
