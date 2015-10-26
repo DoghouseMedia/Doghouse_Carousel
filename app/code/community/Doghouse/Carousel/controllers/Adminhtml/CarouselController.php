@@ -178,4 +178,14 @@ class Doghouse_Carousel_Adminhtml_CarouselController extends Mage_Adminhtml_Cont
         );
     }
 
+    /**
+     * Check acl access for carousel
+     *
+     * @return mixed
+     */
+    protected function _isAllowed()
+    {
+        return Mage::getSingleton('admin/session')->isAllowed('dhcarousel');
+    }
+
 }
