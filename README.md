@@ -5,7 +5,7 @@ This is the illest Magento carousel in the universe. Continuing the trend of thi
 
 ## About
 
-Created by Doghouse because we needed a developer-friendly, bloat-free carousel we could use in any project. Because which website doesn't need a carousel?
+Created by [Doghouse](http://doghouse.agency/) because we needed a developer-friendly, bloat-free carousel we could use in any project. Because which website doesn't need a carousel?
 
 You can use this module even if you just want to show some blocks of content on a site. Most of the time, we would rather use this module for showing random blocks of content than using CMS blocks: CMS blocks can't be grouped ("give me all blocks that are part of this group") and can't be scheduled ("I want this piece of content to be activated at midnight"). They also don't have fields other than the main HTML field.
 
