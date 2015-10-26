@@ -1,11 +1,11 @@
 Doghouse Carousel
 =================
 
-This is the illest Magento carousel in the universe. Continuing the trend of things that make no design-decisions for you, this module doesn't actually show a carousel. In fact, all it shows is an unordered list with things you put in it through the Magento back-end interface. It doesn't come with any javascript or CSS. It's adviced you use [OWLCarousel](http://owlgraphic.com/owlcarousel/) or [Slick Carousel](http://kenwheeler.github.io/slick/) because they're nice and work well.
+This is the illest Magento carousel in the universe. Continuing the trend of things that make no design-decisions for you, this module doesn't actually show a carousel. In fact, all it shows is an unordered list with things you put in it through the Magento admin interface. It doesn't come with any javascript or CSS. It's adviced you use [OWLCarousel](http://owlgraphic.com/owlcarousel/) or [Slick Carousel](http://kenwheeler.github.io/slick/) because they're nice and work well.
 
 ## Features
 
-- Nce Adminhtml grid with sorting, image preview and everything.
+- Nice adminhtml grid with sorting, image preview and everything.
 - It outputs stuff on the front-end
 - You can put stuff in it through the admin panel
 
@@ -22,7 +22,7 @@ Install using Composer (preferred) or Modman.
 
 ## Usage
 
-You can use this carousel as an inline widget, instance widget or normal block by including it in your layout xml. Keep in mind that you can only add css/js assets through the block's `_prepareLayout` method when using it as an instance widget - also see my [Stackoverflow answer](http://stackoverflow.com/a/21109065/896657) (upvote plx);
+You can use this carousel as an inline widget, instance widget or normal block by including it in your layout xml. Keep in mind that you can only add css/js assets through the block's `_prepareLayout` method when using it as an instance widget - also see my [Stackoverflow answer](http://stackoverflow.com/a/21109065/896657).
 
 ### As a block
 
@@ -55,12 +55,16 @@ Note: currently you can't choose the group you want to display, only the `defaul
 ### Extending it
 
 There are a couple events you can listen to, to add additional form fields to the carousel item. You can even save additional images and files by listening to the controller action event:
-`dhcarousel_item_edit_form_prepare_form`
-`dhcarousel_controller_action_form_save`
+ - `dhcarousel_item_edit_form_prepare_form`
+ - `dhcarousel_controller_action_form_save`
 
 ## About
 
 Created by Doghouse because we needed a developer-friendly, bloat-free carousel we could use in any project. Because which website doesn't need a carousel?
 
 You can use this module even if you just want to show some blocks of content on a site. Most of the time, we would rather use this module for showing random blocks of content than using CMS blocks. CMS blocks can't be grouped ("give me all blocks that are part of this group") and can't be scheduled ("I want this piece of content to be activated at midnight"). They also don't have fields other than the main HTML field.
+
+# License
+
+[MIT License](https://opensource.org/licenses/MIT)
 
