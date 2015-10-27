@@ -1,7 +1,21 @@
 <?php
-
+/**
+ * Doghouse_Carousel_Block_Adminhtml_Item_Helper_Image
+ *
+ * @category  Doghouse
+ * @package   Doghouse_Carousel
+ * @author    Doghouse <support@dhmedia.com.au>
+ * @copyright 2015 Doghouse Media (http://doghouse.agency)
+ * @license   https://github.com/DoghouseMedia/Doghouse_Carousel/blob/master/LICENSE  The MIT License (MIT)
+ * @link      https://github.com/DoghouseMedia/Doghouse_Carousel
+ */
 class Doghouse_Carousel_Block_Adminhtml_Item_Helper_Image extends Varien_Data_Form_Element_Image{
 
+    /**
+     * Get carousel image url.
+     *
+     * @return bool|string
+     */
     protected function _getUrl(){
 
         $url = false;
@@ -13,6 +27,11 @@ class Doghouse_Carousel_Block_Adminhtml_Item_Helper_Image extends Varien_Data_Fo
         return $url;
     }
 
+    /**
+     * Get carousel element html.
+     *
+     * @return string
+     */
     public function getElementHtml()
     {
         $html = '';

@@ -1,14 +1,35 @@
 <?php
-
+/**
+ * Doghouse Carousel Helper file.
+ *
+ * @category  Doghouse
+ * @package   Doghouse_Carousel
+ * @author    Doghouse <support@dhmedia.com.au>
+ * @copyright 2015 Doghouse Media (http://doghouse.agency)
+ * @license   https://github.com/DoghouseMedia/Doghouse_Carousel/blob/master/LICENSE  The MIT License (MIT)
+ * @link      https://github.com/DoghouseMedia/Doghouse_Carousel
+ */
+/**
+ * Doghouse_Carousel_Helper_Data
+ *
+ * @category  Doghouse
+ * @package   Doghouse_Carousel
+ * @author    Doghouse <support@dhmedia.com.au>
+ * @copyright 2015 Doghouse Media (http://doghouse.agency)
+ * @license   https://github.com/DoghouseMedia/Doghouse_Carousel/blob/master/LICENSE  The MIT License (MIT)
+ * @link      https://github.com/DoghouseMedia/Doghouse_Carousel
+ */
 class Doghouse_Carousel_Helper_Data extends Mage_Core_Helper_Abstract
 {
-
+    /**
+     * Carousel Items live.
+     */
     const MEDIA_DIR = 'dhcarousel/';
 
     /**
      * With http:// and everything
      *
-     * @return [string] url
+     * @return string
      */
     public function getImageUrl()
     {
@@ -18,7 +39,7 @@ class Doghouse_Carousel_Helper_Data extends Mage_Core_Helper_Abstract
     /**
      * Get the directory, so /media/carousel/
      *
-     * @return [string] uri
+     * @return string
      */
     public function getFullImagesDir()
     {
@@ -28,9 +49,9 @@ class Doghouse_Carousel_Helper_Data extends Mage_Core_Helper_Abstract
     /**
      * Does some saving action
      *
-     * @param  [type] $name name of the input field
+     * @param string $name image name
      *
-     * @return [string | false] filename or false on exception
+     * @return $this
      */
     public function saveImage($name)
     {
@@ -49,16 +70,16 @@ class Doghouse_Carousel_Helper_Data extends Mage_Core_Helper_Abstract
                 Mage::logException($e);
             }
 
-            return;
+            return $this;
         }
     }
 
     /**
      * Formats a nicely formatted Image url
      *
-     * @param  Doghouse_Carousel_Model_Item $item [description]
+     * @param Doghouse_Carousel_Model_Item $item item to save
      *
-     * @return [String] url
+     * @return string
      */
     public function getImage(Doghouse_Carousel_Model_Item $item)
     {
@@ -68,9 +89,9 @@ class Doghouse_Carousel_Helper_Data extends Mage_Core_Helper_Abstract
     /**
      * Formats a nicely formatted url. Aw yeah.
      *
-     * @param  Doghouse_Carousel_Model_Item $item [description]
+     * @param Doghouse_Carousel_Model_Item $item carousel item
      *
-     * @return [String] url
+     * @return string
      */
     public function getUrl(Doghouse_Carousel_Model_Item $item)
     {
@@ -80,7 +101,7 @@ class Doghouse_Carousel_Helper_Data extends Mage_Core_Helper_Abstract
     /**
      * Clear out the cache entries for the given tags
      *
-     * @param $tags
+     * @param array $tags cache tags
      *
      * @return $this
      */

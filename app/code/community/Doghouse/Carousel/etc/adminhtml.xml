@@ -2,16 +2,21 @@
     <menu>
         <cms>
             <children>
-                <dhcarousel_items translate="title" module="dhcarousel">
+                <dhcarousel translate="title" module="dhcarousel">
                     <title>Carousel</title>
                     <sort_order>150</sort_order>
-                    <action>adminhtml/carousel</action>
-                </dhcarousel_items>
-                <dhcarousel_groups translate="title" module="dhcarousel">
-                    <title>Carousel Groups</title>
-                    <sort_order>151</sort_order>
-                    <action>adminhtml/carousel_group</action>
-                </dhcarousel_groups>
+                    <children>
+                        <dhcarousel_items>
+                            <title>Carousel Item</title>
+                            <action>adminhtml/carousel</action>
+                        </dhcarousel_items>
+                        <dhcarousel_groups>
+                            <title>Carousel Groups</title>
+                            <sort_order>151</sort_order>
+                            <action>adminhtml/carousel_group</action>
+                        </dhcarousel_groups>
+                    </children>
+                </dhcarousel>
             </children>
         </cms>
     </menu>
@@ -28,10 +33,14 @@
                                 <title>Carousel</title>
                                 <sort_order>1000</sort_order>
                                 <children>
-                                    <article translate="title" module="dhcarousel">
+                                    <dhcarousel_items>
                                         <title>Manage Items</title>
                                         <sort_order>0</sort_order>
-                                    </article>
+                                    </dhcarousel_items>
+                                    <dhcarousel_groups>
+                                        <title>Manage Groups</title>
+                                        <sort_order>0</sort_order>
+                                    </dhcarousel_groups>
                                 </children>
                             </dhcarousel>
                         </children>

@@ -1,8 +1,22 @@
 <?php
-
+/**
+ * Doghouse_Carousel_Block_Adminhtml_Item_Edit_Form
+ *
+ * @category  Doghouse
+ * @package   Doghouse_Carousel
+ * @author    Doghouse <support@dhmedia.com.au>
+ * @copyright 2015 Doghouse Media (http://doghouse.agency)
+ * @license   https://github.com/DoghouseMedia/Doghouse_Carousel/blob/master/LICENSE  The MIT License (MIT)
+ * @link      https://github.com/DoghouseMedia/Doghouse_Carousel
+ */
 class Doghouse_Carousel_Block_Adminhtml_Item_Edit_Form extends Mage_Adminhtml_Block_Widget_Form
 {
-
+    /**
+     * Prepare carousel item form.
+     *
+     * @return Mage_Adminhtml_Block_Widget_Form
+     * @throws Exception
+     */
     protected function _prepareForm()
     {
 
@@ -152,6 +166,11 @@ class Doghouse_Carousel_Block_Adminhtml_Item_Edit_Form extends Mage_Adminhtml_Bl
         return parent::_prepareForm();
     }
 
+    /**
+     * Carousel item product chooser.
+     *
+     * @return array
+     */
     public function getChooserConfig()
     {
         return array(

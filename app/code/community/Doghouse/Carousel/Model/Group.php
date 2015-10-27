@@ -1,8 +1,19 @@
 <?php
-
+/**
+ * Doghouse_Carousel_Model_Group
+ *
+ * @category  Doghouse
+ * @package   Doghouse_Carousel
+ * @author    Doghouse <support@dhmedia.com.au>
+ * @copyright 2015 Doghouse Media (http://doghouse.agency)
+ * @license   https://github.com/DoghouseMedia/Doghouse_Carousel/blob/master/LICENSE  The MIT License (MIT)
+ * @link      https://github.com/DoghouseMedia/Doghouse_Carousel
+ */
 class Doghouse_Carousel_Model_Group extends Mage_Core_Model_Abstract
 {
-
+    /**
+     * Construct carousel group.
+     */
     protected function _construct()
     {
         $this->_init('dhcarousel/group');
@@ -13,7 +24,6 @@ class Doghouse_Carousel_Model_Group extends Mage_Core_Model_Abstract
      *
      * @return $this
      */
-
     protected function _beforeSave()
     {
         $tag = array(Doghouse_Carousel_Block_Carousel::CACHE_GROUP . '_' . $this->getId());
