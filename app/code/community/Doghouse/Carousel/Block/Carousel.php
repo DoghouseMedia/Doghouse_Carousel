@@ -62,7 +62,8 @@ class Doghouse_Carousel_Block_Carousel
      * @return mixed
      */
     public function getCarouselItems(
-        $identifier = null, $withProducts = false, $withInactive = false, $withSchedule = false, $withLimit = false
+        $identifier = null, $withProducts = false, $withInactive = false,
+        $withSchedule = false, $withLimit = false
     ) {
 
         if (!$identifier) {
@@ -87,6 +88,7 @@ class Doghouse_Carousel_Block_Carousel
         }
 
         if ($withSchedule) {
+
             $todayStartOfDayDate = Mage::app()->getLocale()->date()
                 ->setTime('00:00:00')
                 ->toString(Varien_Date::DATETIME_INTERNAL_FORMAT);
@@ -97,16 +99,17 @@ class Doghouse_Carousel_Block_Carousel
 
             $collection->addFieldToFilter(
                 'from_date', array('or' => array(
-                0 => array('date' => true, 'to' => $todayEndOfDayDate),
-                1 => array('is' => new Zend_Db_Expr('null')))
-            ), 'left'
-            )
-                ->addFieldToFilter(
-                    'to_date', array('or' => array(
-                    0 => array('date' => true, 'from' => $todayStartOfDayDate),
-                    1 => array('is' => new Zend_Db_Expr('null')))
-                ), 'left'
-                );
+                    0 => array('date' => true, 'to' => $todayEndOfDayDate),
+                    1 => array('is' => new Zend_Db_Expr('null'))
+                )), 'left'
+            );
+
+            $collection->addFieldToFilter(
+                'to_date', array('or' => array(
+                        0 => array('date' => true, 'from' => $todayStartOfDayDate),
+                        1 => array('is' => new Zend_Db_Expr('null'))
+                )), 'left'
+            );
 
         }
 
@@ -114,7 +117,7 @@ class Doghouse_Carousel_Block_Carousel
             $collection->getSelect()->limit($withLimit);
         }
 
-            return $collection;
+        return $collection;
     }
 
     /**
