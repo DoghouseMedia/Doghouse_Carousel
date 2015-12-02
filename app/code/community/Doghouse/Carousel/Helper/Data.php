@@ -69,8 +69,7 @@ class Doghouse_Carousel_Helper_Data extends Mage_Core_Helper_Abstract
             if ($e->getCode() != Mage_Core_Model_File_Uploader::TMP_NAME_EMPTY) {
                 Mage::logException($e);
             }
-
-            return $this;
+            throw $e;
         }
     }
 
