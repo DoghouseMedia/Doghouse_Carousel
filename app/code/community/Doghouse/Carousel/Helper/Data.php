@@ -59,7 +59,7 @@ class Doghouse_Carousel_Helper_Data extends Mage_Core_Helper_Abstract
 
         try {
             $uploader = new Mage_Core_Model_File_Uploader($name);
-            $uploader->setAllowedExtensions(array('jpg', 'jpeg', 'gif', 'png'));
+            $uploader->setAllowedExtensions(array('jpg', 'jpeg', 'gif', 'png', 'svg'));
             $uploader->setAllowRenameFiles(true);
             $result = $uploader->save($path);
 
