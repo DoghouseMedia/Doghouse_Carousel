@@ -77,6 +77,8 @@ class Doghouse_Carousel_Helper_Data extends Mage_Core_Helper_Abstract
      * Formats a nicely formatted Image url
      *
      * @param Doghouse_Carousel_Model_Item $item item to save
+     * @param $forOutput If the URL is generated to be outputted in an HTML attribute,
+     * we'll need to escape it
      *
      * @return string
      */
@@ -93,6 +95,8 @@ class Doghouse_Carousel_Helper_Data extends Mage_Core_Helper_Abstract
      * Formats a nicely formatted url. Aw yeah.
      *
      * @param Doghouse_Carousel_Model_Item $item carousel item
+     * @param $forOutput If the URL is generated to be outputted in an HTML attribute,
+     * we'll need to escape it
      *
      * @return string
      */
