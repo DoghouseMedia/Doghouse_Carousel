@@ -80,9 +80,13 @@ class Doghouse_Carousel_Helper_Data extends Mage_Core_Helper_Abstract
      *
      * @return string
      */
-    public function getImage(Doghouse_Carousel_Model_Item $item)
+    public function getImage(Doghouse_Carousel_Model_Item $item, $forOutput = false)
     {
-        return $this->getImageUrl() . $item->getImage();
+        $url = $this->getImageUrl() . $item->getImage();
+        if ($forOutput) {
+            $url = $this->escapeHtml($url);
+        }
+        return $url;
     }
 
     /**
@@ -92,9 +96,13 @@ class Doghouse_Carousel_Helper_Data extends Mage_Core_Helper_Abstract
      *
      * @return string
      */
-    public function getUrl(Doghouse_Carousel_Model_Item $item)
+    public function getUrl(Doghouse_Carousel_Model_Item $item, $forOutput = false)
     {
-        return Mage::getUrl($item->getUrl());
+        $url = Mage::getUrl($item->getUrl());
+        if ($forOutput) {
+            $url = $this->escapeHtml($url);
+        }
+        return $url;
     }
 
     /**
