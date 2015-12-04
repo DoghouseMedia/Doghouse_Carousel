@@ -86,7 +86,7 @@ class Doghouse_Carousel_Helper_Data extends Mage_Core_Helper_Abstract
     {
         $url = $this->getImageUrl() . $item->getImage();
         if ($forOutput) {
-            $url = $this->escapeHtml($url);
+            $url = $this->escapeUrl($url);
         }
         return $url;
     }
@@ -104,7 +104,7 @@ class Doghouse_Carousel_Helper_Data extends Mage_Core_Helper_Abstract
     {
         $url = Mage::getUrl($item->getUrl());
         if ($forOutput) {
-            $url = $this->escapeHtml($url);
+            $url = $this->escapeUrl($url);
         }
         return $url;
     }
