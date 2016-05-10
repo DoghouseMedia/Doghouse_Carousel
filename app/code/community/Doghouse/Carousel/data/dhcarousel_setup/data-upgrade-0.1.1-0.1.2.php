@@ -6,7 +6,6 @@ $installer->startSetup();
 
 // Create a default group, assign all existing carousel images to it
 try {
-
     $defaultGroup = Mage::getModel('dhcarousel/group')
         ->setName('Default')
         ->setIdentifier('default')
@@ -19,7 +18,6 @@ try {
             ->setGroupId($defaultGroup->getId())
             ->save();
     }
-
 } catch (Exception $e) {
     Mage::logException($e);
     throw $e;

@@ -24,7 +24,7 @@ class  Doghouse_Carousel_Model_Cron
             // pageCache only listens to adminhtml requests to clear, so force it to clear
             if (Mage::app()->useCache('full_page')) {
                 $fpc = mage::getModel('enterprise_pagecache/observer');
-                if(is_object($fpc)) {
+                if (is_object($fpc)) {
                     $fpc->cleanCache();
                 }
             }

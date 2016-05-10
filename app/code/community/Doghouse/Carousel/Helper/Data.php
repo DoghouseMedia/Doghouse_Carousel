@@ -64,7 +64,6 @@ class Doghouse_Carousel_Helper_Data extends Mage_Core_Helper_Abstract
             $result = $uploader->save($path);
 
             return $result['file'];
-
         } catch (Exception $e) {
             if ($e->getCode() != Mage_Core_Model_File_Uploader::TMP_NAME_EMPTY) {
                 Mage::logException($e);
@@ -130,5 +129,4 @@ class Doghouse_Carousel_Helper_Data extends Mage_Core_Helper_Abstract
 
         return $this;
     }
-
 }

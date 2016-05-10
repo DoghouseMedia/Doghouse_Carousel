@@ -25,5 +25,4 @@ class Doghouse_Carousel_Model_Item extends Mage_Core_Model_Abstract
     {
         $this->_init('dhcarousel/item');
     }
-
 }

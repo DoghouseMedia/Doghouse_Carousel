@@ -23,10 +23,9 @@ class Doghouse_Carousel_Block_Adminhtml_Item_Grid_Renderer_Group
         $group = Mage::getResourceSingleton('dhcarousel/group_collection')
             ->getItemById($item->getGroupId());
 
-        if($group) {
+        if ($group) {
             return $group->getName();
         }
         return '';
     }
-
 }

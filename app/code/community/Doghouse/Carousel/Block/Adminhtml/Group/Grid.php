@@ -21,7 +21,6 @@ class Doghouse_Carousel_Block_Adminhtml_Group_Grid extends Mage_Adminhtml_Block_
 
     protected function _prepareColumns()
     {
-
         $this->addColumn("id", array(
             "header" => Mage::helper("dhcarousel")->__("ID"),
             "align" =>"right",
@@ -55,7 +54,6 @@ class Doghouse_Carousel_Block_Adminhtml_Group_Grid extends Mage_Adminhtml_Block_
         ));
 
         return parent::_prepareColumns();
-
     }
 
     public function getRowUrl($row)
@@ -80,5 +78,4 @@ class Doghouse_Carousel_Block_Adminhtml_Group_Grid extends Mage_Adminhtml_Block_
         ));
         return $this;
     }
-
 }

@@ -37,5 +37,4 @@ class Doghouse_Carousel_Model_Group extends Mage_Core_Model_Abstract
         mage::helper('dhcarousel')->clearCache($tag);
         return $this;
     }
-
 }

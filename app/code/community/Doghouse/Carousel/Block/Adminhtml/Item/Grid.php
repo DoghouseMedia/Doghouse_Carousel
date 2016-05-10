@@ -21,7 +21,6 @@ class Doghouse_Carousel_Block_Adminhtml_Item_Grid extends Mage_Adminhtml_Block_W
 
     protected function _prepareColumns()
     {
-
         $this->addColumn("id", array(
             "header" => Mage::helper("dhcarousel")->__("ID"),
             "align" =>"right",
@@ -86,7 +85,6 @@ class Doghouse_Carousel_Block_Adminhtml_Item_Grid extends Mage_Adminhtml_Block_W
         $this->addExportType('*/*/exportExcel', Mage::helper('dhcarousel')->__('Excel'));
 
         return parent::_prepareColumns();
-
     }
 
     public function getRowUrl($row)
@@ -111,5 +109,4 @@ class Doghouse_Carousel_Block_Adminhtml_Item_Grid extends Mage_Adminhtml_Block_W
         ));
         return $this;
     }
-
 }
