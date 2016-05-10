@@ -9,7 +9,8 @@
  * @license   https://github.com/DoghouseMedia/Doghouse_Carousel/blob/master/LICENSE  The MIT License (MIT)
  * @link      https://github.com/DoghouseMedia/Doghouse_Carousel
  */
-class Doghouse_Carousel_Block_Adminhtml_Item extends Mage_Adminhtml_Block_Widget_Grid_Container{
+class Doghouse_Carousel_Block_Adminhtml_Item extends Mage_Adminhtml_Block_Widget_Grid_Container
+{
 
     /**
      * Construct Adminhtml carousel item.
@@ -22,5 +23,4 @@ class Doghouse_Carousel_Block_Adminhtml_Item extends Mage_Adminhtml_Block_Widget
         $this->_addButtonLabel = Mage::helper("dhcarousel")->__("Add Carousel Item");
         parent::__construct();
     }
-
 }

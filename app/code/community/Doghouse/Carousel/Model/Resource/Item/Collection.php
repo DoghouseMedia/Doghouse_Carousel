@@ -9,7 +9,8 @@
  * @license   https://github.com/DoghouseMedia/Doghouse_Carousel/blob/master/LICENSE  The MIT License (MIT)
  * @link      https://github.com/DoghouseMedia/Doghouse_Carousel
  */
-class Doghouse_Carousel_Model_Resource_Item_Collection extends Mage_Core_Model_Resource_Db_Collection_Abstract {
+class Doghouse_Carousel_Model_Resource_Item_Collection extends Mage_Core_Model_Resource_Db_Collection_Abstract
+{
 
     /**
      * Construct the carousel item collection.
@@ -18,5 +19,4 @@ class Doghouse_Carousel_Model_Resource_Item_Collection extends Mage_Core_Model_R
     {
         $this->_init('dhcarousel/item');
     }
-
 }

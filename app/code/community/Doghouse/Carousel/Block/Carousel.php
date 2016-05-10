@@ -65,7 +65,6 @@ class Doghouse_Carousel_Block_Carousel
         $identifier = null, $withProducts = false, $withInactive = false,
         $withSchedule = false, $withLimit = false
     ) {
-
         if (!$identifier) {
             $identifier = $this->getGroupIdentifier();
         }
@@ -88,7 +87,6 @@ class Doghouse_Carousel_Block_Carousel
         }
 
         if ($withSchedule) {
-
             $todayStartOfDayDate = Mage::app()->getLocale()->date()
                 ->setTime('00:00:00')
                 ->toString(Varien_Date::DATETIME_INTERNAL_FORMAT);
@@ -110,7 +108,6 @@ class Doghouse_Carousel_Block_Carousel
                         1 => array('is' => new Zend_Db_Expr('null'))
                 )), 'left'
             );
-
         }
 
         if ($withLimit && is_integer($withLimit)) {
@@ -191,6 +188,4 @@ class Doghouse_Carousel_Block_Carousel
 
         return $tags;
     }
-
-
 }

@@ -9,15 +9,16 @@
  * @license   https://github.com/DoghouseMedia/Doghouse_Carousel/blob/master/LICENSE  The MIT License (MIT)
  * @link      https://github.com/DoghouseMedia/Doghouse_Carousel
  */
-class Doghouse_Carousel_Block_Adminhtml_Item_Helper_Image extends Varien_Data_Form_Element_Image{
+class Doghouse_Carousel_Block_Adminhtml_Item_Helper_Image extends Varien_Data_Form_Element_Image
+{
 
     /**
      * Get carousel image url.
      *
      * @return bool|string
      */
-    protected function _getUrl(){
-
+    protected function _getUrl()
+    {
         $url = false;
 
         if ($this->getValue()) {
@@ -39,7 +40,7 @@ class Doghouse_Carousel_Block_Adminhtml_Item_Helper_Image extends Varien_Data_Fo
         if ((string)$this->getValue()) {
             $url = $this->_getUrl();
 
-            if( !preg_match("/^http\:\/\/|https\:\/\//", $url) ) {
+            if (!preg_match("/^http\:\/\/|https\:\/\//", $url)) {
                 $url = Mage::getBaseUrl('media') . $url;
             }
 
@@ -55,5 +56,4 @@ class Doghouse_Carousel_Block_Adminhtml_Item_Helper_Image extends Varien_Data_Fo
 
         return $html;
     }
-
 }

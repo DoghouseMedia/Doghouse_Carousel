@@ -85,7 +85,6 @@ class Doghouse_Carousel_Adminhtml_CarouselController extends Mage_Adminhtml_Cont
      */
     public function saveAction()
     {
-
         $post_data = $this->getRequest()->getPost();
 
         if (!$post_data) {
@@ -94,11 +93,11 @@ class Doghouse_Carousel_Adminhtml_CarouselController extends Mage_Adminhtml_Cont
         try {
             // File upload
             if (isset($_FILES['image']['name']) && $_FILES['image']['name'] != '') {
-                if($filename = Mage::helper('dhcarousel')->saveImage('image')) {
+                if ($filename = Mage::helper('dhcarousel')->saveImage('image')) {
                     $post_data['image'] = $filename;
                 }
             } else {
-                if(!$this->getRequest()->getParam("id")) {
+                if (!$this->getRequest()->getParam("id")) {
                     throw new Exception('An image is required!');
                 }
                 unset($post_data['image']);
@@ -134,13 +133,11 @@ class Doghouse_Carousel_Adminhtml_CarouselController extends Mage_Adminhtml_Cont
             $this->_redirect("*/*/");
 
             return $this;
-
         } catch (Exception $e) {
-
             Mage::getSingleton("adminhtml/session")->addError($e->getMessage());
             Mage::getSingleton("adminhtml/session")->setCarouselItemData($this->getRequest()->getPost());
 
-            if($this->getRequest()->getParam("id")) {
+            if ($this->getRequest()->getParam("id")) {
                 $this->_redirect("*/*/edit", array("id" => $this->getRequest()->getParam("id")));
             } else {
                 $this->_redirect("*/*/new");
@@ -148,8 +145,6 @@ class Doghouse_Carousel_Adminhtml_CarouselController extends Mage_Adminhtml_Cont
 
             return $this;
         }
-
-
     }
 
     /**
@@ -157,14 +152,13 @@ class Doghouse_Carousel_Adminhtml_CarouselController extends Mage_Adminhtml_Cont
      */
     public function deleteAction()
     {
-        if( $this->getRequest()->getParam("id") > 0 ) {
+        if ($this->getRequest()->getParam("id") > 0) {
             try {
                 $model = Mage::getModel("dhcarousel/item");
                 $model->setId($this->getRequest()->getParam("id"))->delete();
                 Mage::getSingleton("adminhtml/session")->addSuccess(Mage::helper("adminhtml")->__("Item was successfully deleted"));
                 $this->_redirect("*/*/");
-            }
-            catch (Exception $e) {
+            } catch (Exception $e) {
                 Mage::getSingleton("adminhtml/session")->addError($e->getMessage());
                 $this->_redirect("*/*/edit", array("id" => $this->getRequest()->getParam("id")));
             }
@@ -180,12 +174,11 @@ class Doghouse_Carousel_Adminhtml_CarouselController extends Mage_Adminhtml_Cont
         try {
             $ids = $this->getRequest()->getPost('ids', array());
             foreach ($ids as $id) {
-                  $model = Mage::getModel("dhcarousel/item");
-                  $model->setId($id)->delete();
+                $model = Mage::getModel("dhcarousel/item");
+                $model->setId($id)->delete();
             }
             Mage::getSingleton("adminhtml/session")->addSuccess(Mage::helper("adminhtml")->__("Item(s) successfully removed"));
-        }
-        catch (Exception $e) {
+        } catch (Exception $e) {
             Mage::getSingleton("adminhtml/session")->addError($e->getMessage());
         }
         $this->_redirect('*/*/');
@@ -233,5 +226,4 @@ class Doghouse_Carousel_Adminhtml_CarouselController extends Mage_Adminhtml_Cont
     {
         return Mage::getSingleton('admin/session')->isAllowed('cms/dhcarousel/dhcarousel_items');
     }
-
 }

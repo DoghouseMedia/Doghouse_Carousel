@@ -9,7 +9,8 @@
  * @license   https://github.com/DoghouseMedia/Doghouse_Carousel/blob/master/LICENSE  The MIT License (MIT)
  * @link      https://github.com/DoghouseMedia/Doghouse_Carousel
  */
-class Doghouse_Carousel_Block_Adminhtml_Item_Grid_Renderer_Image extends Mage_Adminhtml_Block_Widget_Grid_Column_Renderer_Abstract {
+class Doghouse_Carousel_Block_Adminhtml_Item_Grid_Renderer_Image extends Mage_Adminhtml_Block_Widget_Grid_Column_Renderer_Abstract
+{
 
     /**
      * Render preview for image item.
@@ -25,5 +26,4 @@ class Doghouse_Carousel_Block_Adminhtml_Item_Grid_Renderer_Image extends Mage_Ad
 
         return sprintf('<img src="%s" alt="%s" title="%s" width="200px" style="max-height:100px" class="small-image-preview v-middle" />', $url, $alt, $title);
     }
-
 }

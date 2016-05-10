@@ -80,9 +80,7 @@ class Doghouse_Carousel_Adminhtml_Carousel_GroupController extends Mage_Adminhtm
         $post_data = $this->getRequest()->getPost();
 
         if ($post_data) {
-
             try {
-
                 $model = Mage::getModel("dhcarousel/group")
                     ->addData($post_data)
                     ->setId($this->getRequest()->getParam("id"))
@@ -100,14 +98,13 @@ class Doghouse_Carousel_Adminhtml_Carousel_GroupController extends Mage_Adminhtm
             } catch (Exception $e) {
                 Mage::getSingleton("adminhtml/session")->addError($e->getMessage());
                 Mage::getSingleton("adminhtml/session")->setCarouselGroupData($this->getRequest()->getPost());
-                if($this->getRequest()->getParam("id")) {
+                if ($this->getRequest()->getParam("id")) {
                     $this->_redirect("*/*/edit", array("id" => $this->getRequest()->getParam("id")));
                 } else {
                     $this->_redirect("*/*/new");
                 }
                 return;
             }
-
         }
         $this->_redirect("*/*/");
     }
@@ -117,14 +114,13 @@ class Doghouse_Carousel_Adminhtml_Carousel_GroupController extends Mage_Adminhtm
      */
     public function deleteAction()
     {
-        if( $this->getRequest()->getParam("id") > 0 ) {
+        if ($this->getRequest()->getParam("id") > 0) {
             try {
                 $model = Mage::getModel("dhcarousel/group");
                 $model->setId($this->getRequest()->getParam("id"))->delete();
                 Mage::getSingleton("adminhtml/session")->addSuccess(Mage::helper("adminhtml")->__("Group was successfully deleted"));
                 $this->_redirect("*/*/");
-            }
-            catch (Exception $e) {
+            } catch (Exception $e) {
                 Mage::getSingleton("adminhtml/session")->addError($e->getMessage());
                 $this->_redirect("*/*/edit", array("id" => $this->getRequest()->getParam("id")));
             }
@@ -140,12 +136,11 @@ class Doghouse_Carousel_Adminhtml_Carousel_GroupController extends Mage_Adminhtm
         try {
             $ids = $this->getRequest()->getPost('ids', array());
             foreach ($ids as $id) {
-                  $model = Mage::getModel("dhcarousel/group");
-                  $model->setId($id)->delete();
+                $model = Mage::getModel("dhcarousel/group");
+                $model->setId($id)->delete();
             }
             Mage::getSingleton("adminhtml/session")->addSuccess(Mage::helper("adminhtml")->__("Group(s) successfully removed"));
-        }
-        catch (Exception $e) {
+        } catch (Exception $e) {
             Mage::getSingleton("adminhtml/session")->addError($e->getMessage());
         }
         $this->_redirect('*/*/');
@@ -168,5 +163,4 @@ class Doghouse_Carousel_Adminhtml_Carousel_GroupController extends Mage_Adminhtm
     {
         return Mage::getSingleton('admin/session')->isAllowed('cms/dhcarousel/dhcarousel_groups');
     }
-
 }

@@ -9,7 +9,8 @@
  * @license   https://github.com/DoghouseMedia/Doghouse_Carousel/blob/master/LICENSE  The MIT License (MIT)
  * @link      https://github.com/DoghouseMedia/Doghouse_Carousel
  */
-class Doghouse_Carousel_Block_Adminhtml_Group extends Mage_Adminhtml_Block_Widget_Grid_Container{
+class Doghouse_Carousel_Block_Adminhtml_Group extends Mage_Adminhtml_Block_Widget_Grid_Container
+{
 
     /**
      * Construct Adminhtml carousel group.
@@ -22,5 +23,4 @@ class Doghouse_Carousel_Block_Adminhtml_Group extends Mage_Adminhtml_Block_Widge
         $this->_addButtonLabel = Mage::helper("dhcarousel")->__("Add Carousel Group");
         parent::__construct();
     }
-
 }

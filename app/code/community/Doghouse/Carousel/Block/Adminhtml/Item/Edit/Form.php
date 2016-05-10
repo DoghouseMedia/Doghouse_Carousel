@@ -19,7 +19,6 @@ class Doghouse_Carousel_Block_Adminhtml_Item_Edit_Form extends Mage_Adminhtml_Bl
      */
     protected function _prepareForm()
     {
-
         $form = new Varien_Data_Form(
             array(
                 "id"      => "edit_form",
@@ -157,7 +156,6 @@ class Doghouse_Carousel_Block_Adminhtml_Item_Edit_Form extends Mage_Adminhtml_Bl
                 $form->getElement('product_link')
                     ->setValue('product/' . $model->getProductId());
             }
-
         } elseif (Mage::getSingleton("adminhtml/session")->getCarouselItemData()) {
             $form->setValues(Mage::getSingleton("adminhtml/session")->getCarouselItemData());
             Mage::getSingleton("adminhtml/session")->setCarouselItemData(null);
@@ -179,5 +177,4 @@ class Doghouse_Carousel_Block_Adminhtml_Item_Edit_Form extends Mage_Adminhtml_Bl
             )
         );
     }
-
 }
