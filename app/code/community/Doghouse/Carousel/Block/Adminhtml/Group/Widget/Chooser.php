@@ -1,10 +1,14 @@
-
 <?php
-
 /**
-* Carousel group chooser for Wysiwyg CMS widget
-*
-*/
+ * Doghouse_Carousel_Block_Adminhtml_Group_Widget_Chooser
+ *
+ * @category  Doghouse
+ * @package   Doghouse_Carousel
+ * @author    Doghouse <support@dhmedia.com.au>
+ * @copyright 2015 Doghouse Media (http://doghouse.agency)
+ * @license   https://github.com/DoghouseMedia/Doghouse_Carousel/blob/master/LICENSE  The MIT License (MIT)
+ * @link      https://github.com/DoghouseMedia/Doghouse_Carousel
+ */
 class Doghouse_Carousel_Block_Adminhtml_Group_Widget_Chooser extends Doghouse_Carousel_Block_Adminhtml_Group_Grid
 {
     /**

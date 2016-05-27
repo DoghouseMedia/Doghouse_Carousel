@@ -1,6 +1,6 @@
 <?php
 /**
- * Doghouse_Carousel_Model_Group
+ * Doghouse_Carousel_Model_Config_Source_Groups
  *
  * @category  Doghouse
  * @package   Doghouse_Carousel
