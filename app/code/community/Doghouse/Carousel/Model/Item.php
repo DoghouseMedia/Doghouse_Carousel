@@ -11,6 +11,13 @@
  */
 class Doghouse_Carousel_Model_Item extends Mage_Core_Model_Abstract
 {
+
+    /**
+     * Event prefix for easier listening to save/load before/after events
+     * @var string
+     */
+    protected $_eventPrefix = 'dhcarousel_item';
+
     /**
      * Construct carousel item.
      */

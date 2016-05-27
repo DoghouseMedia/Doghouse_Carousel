@@ -59,7 +59,7 @@ class Doghouse_Carousel_Helper_Data extends Mage_Core_Helper_Abstract
 
         try {
             $uploader = new Mage_Core_Model_File_Uploader($name);
-            $uploader->setAllowedExtensions(array('jpg', 'jpeg', 'gif', 'png'));
+            $uploader->setAllowedExtensions(array('jpg', 'jpeg', 'gif', 'png', 'svg'));
             $uploader->setAllowRenameFiles(true);
             $result = $uploader->save($path);
 
@@ -69,8 +69,7 @@ class Doghouse_Carousel_Helper_Data extends Mage_Core_Helper_Abstract
             if ($e->getCode() != Mage_Core_Model_File_Uploader::TMP_NAME_EMPTY) {
                 Mage::logException($e);
             }
-
-            return $this;
+            throw $e;
         }
     }
 
@@ -78,24 +77,36 @@ class Doghouse_Carousel_Helper_Data extends Mage_Core_Helper_Abstract
      * Formats a nicely formatted Image url
      *
      * @param Doghouse_Carousel_Model_Item $item item to save
+     * @param $forOutput If the URL is generated to be outputted in an HTML attribute,
+     * we'll need to escape it
      *
      * @return string
      */
-    public function getImage(Doghouse_Carousel_Model_Item $item)
+    public function getImage(Doghouse_Carousel_Model_Item $item, $forOutput = false)
     {
-        return $this->getImageUrl() . $item->getImage();
+        $url = $this->getImageUrl() . $item->getImage();
+        if ($forOutput) {
+            $url = $this->escapeUrl($url);
+        }
+        return $url;
     }
 
     /**
      * Formats a nicely formatted url. Aw yeah.
      *
      * @param Doghouse_Carousel_Model_Item $item carousel item
+     * @param $forOutput If the URL is generated to be outputted in an HTML attribute,
+     * we'll need to escape it
      *
      * @return string
      */
-    public function getUrl(Doghouse_Carousel_Model_Item $item)
+    public function getUrl(Doghouse_Carousel_Model_Item $item, $forOutput = false)
     {
-        return Mage::getUrl($item->getUrl());
+        $url = Mage::getUrl($item->getUrl());
+        if ($forOutput) {
+            $url = $this->escapeUrl($url);
+        }
+        return $url;
     }
 
     /**
