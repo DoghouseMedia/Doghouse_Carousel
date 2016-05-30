@@ -1,8 +1,25 @@
+<?xml version="1.0"?>
 <widgets>
     <dhcarousel_carousel type="dhcarousel/carousel">
         <name>Doghouse Carousel</name>
         <description type="desc">
             This widget inserts a carousel slider.
         </description>
+        <parameters>
+            <group_identifier type="complex" translate="label">
+                <required>1</required>
+                <visible>1</visible>
+                <label>Carousel Group</label>
+                <type>label</type>
+                <helper_block>
+                    <type>dhcarousel/adminhtml_group_widget_chooser</type>
+                    <data>
+                        <button translate="open">
+                            <open>Select Carousel Group...</open>
+                        </button>
+                    </data>
+                </helper_block>
+            </group_identifier>
+        </parameters>
     </dhcarousel_carousel>
 </widgets>
