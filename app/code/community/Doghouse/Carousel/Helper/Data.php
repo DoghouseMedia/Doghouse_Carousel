@@ -61,6 +61,11 @@ class Doghouse_Carousel_Helper_Data extends Mage_Core_Helper_Abstract
             $uploader = Mage::getModel('core/file_uploader', $name);
             $uploader->setAllowedExtensions(array('jpg', 'jpeg', 'gif', 'png', 'svg'));
             $uploader->setAllowRenameFiles(true);
+            $uploader->addValidateCallback(
+                Mage_Core_Model_File_Validator_Image::NAME,
+                Mage::getModel('core/file_validator_image'),
+                'validate'
+            );
             $result = $uploader->save($path);
 
             return $result['file'];
